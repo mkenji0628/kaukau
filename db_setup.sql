@@ -1,0 +1,6 @@
+CREATE DATABASE IF NOT EXISTS kaukau_db;
+
+CREATE USER IF NOT EXISTS test_user
+    IDENTIFIED BY '1234';
+
+GRANT ALL ON kaukau_db.* TO test_user;
