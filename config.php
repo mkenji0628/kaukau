@@ -6,3 +6,4 @@ define('PASSWORD', '1234');
 define('MSG_TITLE_REQUIRED', '商品名を入力してください');
 define('TASK_STATUS_NOTYET', 'notyet');
 define('TASK_STATUS_DONE', 'done');
+define('MSG_TITLE_NO_CHANGE', '商品情報が変更されていません');
