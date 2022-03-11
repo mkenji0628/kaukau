@@ -20,11 +20,11 @@ $notyet_tasks = find_task_by_status(TASK_STATUS_NOTYET);
             </form>
         </div>
         <div class="notyet-task">
-            <h2>商品一覧</h2>
+            <h2>販売商品一覧</h2>
             <ul>
                 <?php foreach ($notyet_tasks as $task) : ?>
                     <li>
-                        <!-- <a href="" class="btn done-btn">完了</a> -->
+                        <a href="" class="btn done-btn">完了</a>
                         <a href="" class="btn edit-btn">編集</a>
                         <a href="" class="btn delete-btn">削除</a>
                         <?= h($task['title']) ?>
@@ -36,10 +36,10 @@ $notyet_tasks = find_task_by_status(TASK_STATUS_NOTYET);
         </div>
         <hr>
         <div class="done-task">
-            <h2>完了タスク</h2>
+            <h2>売り切れた商品</h2>
             <ul>
                 <li>
-                    完了テストタスク
+                    アイス
                 </li>
             </ul>
         </div>
