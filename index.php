@@ -1,6 +1,30 @@
 <?php
 require_once __DIR__ . '/functions.php';
 require_once __DIR__ . '/config.php';
+
+/* タスク登録
+--------------------------------------------*/
+// 初期化
+$title = '';
+$errors = [];
+
+// リクエストメソッドの判定
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // フォームに入力されたデータを受け取る
+    $title = filter_input(INPUT_POST, 'title');
+    $price = filter_input(INPUT_POST, 'price');
+
+    // タスク登録処理の実行
+    // insert_task($title, $price);
+    $errors = insert_validate($title, $price);
+
+    // エラーチェック
+    if (empty($errors)) {
+        // タスク登録処理の実行
+        insert_task($title);
+    }
+}
+
 $notyet_tasks = find_task_by_status(TASK_STATUS_NOTYET);
 ?>
 
@@ -13,9 +37,14 @@ $notyet_tasks = find_task_by_status(TASK_STATUS_NOTYET);
 
     <div class="wrapper">
         <div class="new-task">
-            <h1>商品の一覧を表示</h1>
+            <h1>新しい商品を登録</h1>
+
+            <!-- エラーが発生した場合、エラーメッセージを出力 -->
+            <?php if ($errors) echo (create_err_msg($errors)) ?>
+
             <form action="" method="post">
-                <input type="text" name="title" placeholder="タスクを入力してください">
+                <input type="text" name="title" placeholder="商品名を入力してください">
+                <input type="text" name="price" placeholder="値段を入力してください">
                 <input type="submit" value="登録" class="btn submit-btn">
             </form>
         </div>
@@ -28,7 +57,7 @@ $notyet_tasks = find_task_by_status(TASK_STATUS_NOTYET);
                         <a href="" class="btn edit-btn">編集</a>
                         <a href="" class="btn delete-btn">削除</a>
                         <?= h($task['title']) ?>
-                        <?= h($task['price'].'円') ?>
+                        <?= h($task['price'] . '円') ?>
                         <!-- <?= h($task['title']) ?> -->
                     </li>
                 <?php endforeach; ?>
