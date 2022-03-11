@@ -18,6 +18,8 @@ $errors = [];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // フォームに入力されたデータを受け取る
     $title = filter_input(INPUT_POST, 'title');
+    $price = filter_input(INPUT_POST, 'price');
+
 
     // バリデーション
     $errors = update_validate($title, $task);
@@ -25,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // エラーチェック
     if (empty($errors)) {
         // タスク更新処理の実行
-        update_task($id, $title);
+        update_task($id, $title, $price);
 
         // index.php にリダイレクト
         header('Location: index.php');

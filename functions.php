@@ -178,7 +178,7 @@ function update_validate($title, $task)
 }
 
 // タスク更新
-function update_task($id, $title)
+function update_task($id, $title, $price)
 {
     // データベースに接続
     $dbh = connect_db();
@@ -188,7 +188,8 @@ function update_task($id, $title)
     UPDATE
         product
     SET
-        title = :title
+        title = :title,
+        price = :price
     WHERE
         id = :id
     EOM;
@@ -198,6 +199,7 @@ function update_task($id, $title)
 
     // パラメータのバインド
     $stmt->bindParam(':title', $title, PDO::PARAM_STR);
+    $stmt->bindParam(':price', $price, PDO::PARAM_STR);
     $stmt->bindParam(':id', $id, PDO::PARAM_INT);
 
     // プリペアドステートメントの実行
