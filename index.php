@@ -1,9 +1,7 @@
 <?php
-
 require_once __DIR__ . '/functions.php';
 require_once __DIR__ . '/config.php';
 $notyet_tasks = find_task_by_status(TASK_STATUS_NOTYET);
-
 ?>
 
 <!DOCTYPE html>
