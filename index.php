@@ -3,9 +3,10 @@ require_once __DIR__ . '/functions.php';
 require_once __DIR__ . '/config.php';
 
 /* タスク登録
----------------------------------------------*/
+--------------------------------------------*/
 // 初期化
 $title = '';
+$errors = [];
 
 // リクエストメソッドの判定
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -14,7 +15,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $price = filter_input(INPUT_POST, 'price');
 
     // タスク登録処理の実行
-    insert_task($title, $price);
+    // insert_task($title, $price);
+    $errors = insert_validate($title, $price);
+
+// エラーチェック
+if (empty($errors)) {
+    // タスク登録処理の実行
+    insert_task($title);
+}
 }
 
 $notyet_tasks = find_task_by_status(TASK_STATUS_NOTYET);

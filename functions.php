@@ -30,6 +30,21 @@ function h($str)
 }
 
 
+// タスク登録時のバリデーション
+function insert_validate($title)
+{
+    // 初期化
+    $errors = [];
+
+    if ($title == '') {
+        $errors[] = MSG_TITLE_REQUIRED;
+    }
+
+    return $errors;
+}
+
+
+
 // タスク登録
 function insert_task($title, $price)
 {
