@@ -28,3 +28,24 @@ function h($str)
     // ENT_QUOTES: シングルクオートとダブルクオートを共に変換する。
     return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
 }
+
+function find_task_by_status($status)
+{
+require_once __DIR__ . '/functions.php';
+
+$dbh = connect_db();
+
+$sql = <<<EOM
+SELECT
+    *
+FROM 
+    product
+WHERE 
+    status = :status;
+EOM;
+
+$stmt = $dbh->prepare($sql);
+$stmt->bindParam(':status', $status, PDO::PARAM_STR);
+$stmt->execute();
+return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}

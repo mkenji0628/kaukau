@@ -1,24 +1,9 @@
 <?php
 
 require_once __DIR__ . '/functions.php';
+require_once __DIR__ . '/config.php';
+$notyet_tasks = find_task_by_status(TASK_STATUS_NOTYET);
 
-$dbh = connect_db();
-
-$sql = <<<EOM
-SELECT
-    *
-FROM 
-    product
-WHERE 
-    title = :title
-EOM;
-
-$stmt = $dbh->prepare($sql);
-// $status = 'notyet';
-$stmt->bindParam(':title', $title, PDO::PARAM_STR);
-$stmt->execute();
-// $notyet_tasks = $stmt->fetchAll(PDO::FETCH_ASSOC);
-$title = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -39,12 +24,14 @@ $title = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="notyet-task">
             <h2>商品一覧</h2>
             <ul>
-                <li>
-                    <a href="" class="btn done-btn">完了</a>
-                    <a href="" class="btn edit-btn">編集</a>
-                    <a href="" class="btn delete-btn">削除</a>
-                    未完了テストタスク
-                </li>
+                <?php foreach ($notyet_tasks as $task) : ?>
+                    <li>
+                        <a href="" class="btn done-btn">完了</a>
+                        <a href="" class="btn edit-btn">編集</a>
+                        <a href="" class="btn delete-btn">削除</a>
+                        <?= h($task['title']) ?>
+                    </li>
+                <?php endforeach; ?>
             </ul>
         </div>
         <hr>
