@@ -3,6 +3,22 @@
 require_once __DIR__ . '/functions.php';
 
 $dbh = connect_db();
+
+$sql = <<<EOM
+SELECT
+    *
+FROM 
+    product
+WHERE 
+    title = :title
+EOM;
+
+$stmt = $dbh->prepare($sql);
+// $status = 'notyet';
+$stmt->bindParam(':title', $title, PDO::PARAM_STR);
+$stmt->execute();
+// $notyet_tasks = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$title = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
