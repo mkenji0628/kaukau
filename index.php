@@ -26,10 +26,12 @@ $notyet_tasks = find_task_by_status(TASK_STATUS_NOTYET);
             <ul>
                 <?php foreach ($notyet_tasks as $task) : ?>
                     <li>
-                        <a href="" class="btn done-btn">完了</a>
+                        <!-- <a href="" class="btn done-btn">完了</a> -->
                         <a href="" class="btn edit-btn">編集</a>
                         <a href="" class="btn delete-btn">削除</a>
                         <?= h($task['title']) ?>
+                        <?= h($task['price'].'円') ?>
+                        <!-- <?= h($task['title']) ?> -->
                     </li>
                 <?php endforeach; ?>
             </ul>
