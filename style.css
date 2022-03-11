@@ -52,14 +52,25 @@ input[type="text"] {
 .btn:hover {
     background-color:#93d8d0;
 }
-.submit-btn {
-    background-color: #4394eb;
+.submit-btn,
+.return-btn {
     width: 100%;
     margin-top: 20px;
     padding: 5px 0;
     letter-spacing: 1.5rem;
     text-indent: 1.5rem;
 }
+
+.submit-btn {
+    background-color: #4394eb;
+}
+.return-btn {
+    display: block;
+    background-color: #f5b781;
+}
+
+
+
 .done-btn,
 .edit-btn,
 .delete-btn {
