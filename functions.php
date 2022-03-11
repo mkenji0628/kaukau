@@ -109,11 +109,6 @@ function update_status_to_done($id)
     $stmt->execute();
 }
 
-
-
-
-
-
 function find_task_by_status($status)
 {
 require_once __DIR__ . '/functions.php';
@@ -133,4 +128,34 @@ $stmt = $dbh->prepare($sql);
 $stmt->bindParam(':status', $status, PDO::PARAM_STR);
 $stmt->execute();
 return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+
+// 受け取った id のレコードを取得
+function find_by_id($id)
+{
+    // データベースに接続
+    $dbh = connect_db();
+
+    // $id を使用してデータを取得
+    $sql = <<<EOM
+    SELECT
+        * 
+    FROM 
+        product
+    WHERE 
+        id = :id;
+    EOM;
+
+    // プリペアドステートメントの準備
+    $stmt = $dbh->prepare($sql);
+
+    // パラメータのバインド
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+
+    // プリペアドステートメントの実行
+    $stmt->execute();
+
+    // 結果の取得
+    return $stmt->fetch(PDO::FETCH_ASSOC);
 }
