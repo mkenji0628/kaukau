@@ -29,6 +29,29 @@ function h($str)
     return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
 }
 
+
+// タスク登録
+function insert_task($title, $price)
+{
+    // データベースに接続
+    $dbh = connect_db();
+
+    // レコードを追加
+    $sql = <<<EOM
+    INSERT INTO
+        product
+        (title, price)
+    VALUES
+        (:title, :price)
+    EOM;
+    
+    $stmt = $dbh->prepare($sql);
+    $stmt->bindParam(':title', $title, PDO::PARAM_STR);
+    $stmt->bindParam(':price', $price, PDO::PARAM_STR);
+    $stmt->execute();
+}
+
+
 function find_task_by_status($status)
 {
 require_once __DIR__ . '/functions.php';
