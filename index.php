@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $price = filter_input(INPUT_POST, 'price');
 
     // タスク登録処理の実行
-    // insert_task($title, $price);
+    insert_task($title, $price);
     $errors = insert_validate($title, $price);
 
     // エラーチェック
@@ -75,6 +75,7 @@ $done_tasks = find_task_by_status(TASK_STATUS_DONE);
             <ul>
                 <?php foreach ($done_tasks as $task) : ?>
                     <li>
+                        <a href="cancel.php?id=<?= h($task['id']) ?>" class="btn cancel-btn">未完了</a>
                         <?= h($task['title']) ?>
                         <?= h($task['price'] . '円') ?>
                     </li>
