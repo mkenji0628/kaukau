@@ -6,7 +6,7 @@ require_once __DIR__ . '/functions.php';
 $id = filter_input(INPUT_GET, 'id');
 
 // ステータスの更新
-update_status($id, TASK_STATUS_DONE);
+update_status($id, TASK_STATUS_NOTYET);
 
 // index.phpへリダイレクト
 header('Location: index.php');

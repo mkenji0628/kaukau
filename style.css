@@ -84,7 +84,8 @@ input[type="text"] {
 
 .done-btn,
 .edit-btn,
-.delete-btn {
+.delete-btn,
+.cancel-btn {
     font-size: 0.9rem;
     margin-right: 3px;
     padding: 5px;
@@ -97,6 +98,9 @@ input[type="text"] {
 }
 .delete-btn {
     background-color: #f96262;
+}
+.cancel-btn {
+    background-color: #88109b;
 }
 
 /* タスク一覧画面 
