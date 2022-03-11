@@ -83,7 +83,31 @@ function create_err_msg($errors)
 
 
 
+// タスク完了
+function update_status_to_done($id)
+{
+    // データベースに接続
+    $dbh = connect_db();
 
+    // $id を使用してデータを更新
+    $sql = <<<EOM
+    UPDATE
+        product
+    SET
+        status = 'done'
+    WHERE
+        id = :id
+    EOM;
+
+    // プリペアドステートメントの準備
+    $stmt = $dbh->prepare($sql);
+
+    // パラメータのバインド
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+
+    // プリペアドステートメントの実行
+    $stmt->execute();
+}
 
 
 
