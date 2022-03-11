@@ -11,7 +11,16 @@
             <input type="text" name="title">
             <input type="submit" value="変更" class="btn submit-btn">
         </form>
-        <a href="index.php" class="btn return-btn">戻る</a>
+    </div>
+
+    <div class="wrapper">
+        <h2>商品価格変更</h2>
+        <form action="" method="post">
+            <input type="text" name="title">
+            <input type="submit" value="変更" class="btn submit-btn">
+        </form>
+
+    <a href="index.php" class="btn return-btn">戻る</a>
     </div>
 </body>
 
