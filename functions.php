@@ -67,6 +67,29 @@ function insert_task($title, $price)
 }
 
 
+// エラーメッセージ作成
+function create_err_msg($errors)
+{
+    $err_msg = "<ul class=\"errors\">\n";
+
+    foreach ($errors as $error) {
+        $err_msg .= "<li>" . h($error) . "</li>\n";
+    }
+
+    $err_msg .= "</ul>\n";
+    
+    return $err_msg;
+}
+
+
+
+
+
+
+
+
+
+
 function find_task_by_status($status)
 {
 require_once __DIR__ . '/functions.php';

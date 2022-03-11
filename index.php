@@ -18,11 +18,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // insert_task($title, $price);
     $errors = insert_validate($title, $price);
 
-// エラーチェック
-if (empty($errors)) {
-    // タスク登録処理の実行
-    insert_task($title);
-}
+    // エラーチェック
+    if (empty($errors)) {
+        // タスク登録処理の実行
+        insert_task($title);
+    }
 }
 
 $notyet_tasks = find_task_by_status(TASK_STATUS_NOTYET);
@@ -38,6 +38,10 @@ $notyet_tasks = find_task_by_status(TASK_STATUS_NOTYET);
     <div class="wrapper">
         <div class="new-task">
             <h1>新しい商品を登録</h1>
+
+            <!-- エラーが発生した場合、エラーメッセージを出力 -->
+            <?php if ($errors) echo (create_err_msg($errors)) ?>
+
             <form action="" method="post">
                 <input type="text" name="title" placeholder="商品名を入力してください">
                 <input type="text" name="price" placeholder="値段を入力してください">
