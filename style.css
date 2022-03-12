@@ -148,7 +148,7 @@ input[type="text"] {
 /* .notyet-task h2 {
     background: linear-gradient(transparent 70%, #fee9a4 70%);
 } */
-.ribbon1 {
+.in-ribbon{
     text-align: center;
     display: inline-block; 
     position: relative;
@@ -162,7 +162,7 @@ input[type="text"] {
     box-sizing: border-box;
 }
 
-.ribbon1:before, .ribbon1:after {
+.in-ribbon:before, .in-ribbon:after {
     position: absolute;
     content: '';
     width: 0px;
@@ -170,7 +170,7 @@ input[type="text"] {
     z-index: 1;
 }
 
-.ribbon1:before {
+.in-ribbon:before {
     top: 0;
     left: 0;
     border-width: 25px 0px 25px 15px;
@@ -178,7 +178,7 @@ input[type="text"] {
     border-style: solid;
 }
 
-.ribbon1:after {
+.in-ribbon:after {
     top: 0;
     right: 0;
     border-width: 25px 15px 25px 0px;
