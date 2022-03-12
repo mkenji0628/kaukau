@@ -30,7 +30,7 @@ function h($str)
 }
 
 
-// タスク登録時のバリデーション
+// 商品登録時のバリデーション
 function insert_validate($title)
 {
     // 初期化
@@ -45,7 +45,7 @@ function insert_validate($title)
 
 
 
-// タスク登録
+// 商品登録
 function insert_task($title, $price)
 {
     // データベースに接続
@@ -83,7 +83,7 @@ function create_err_msg($errors)
 
 
 
-// タスク完了
+// 売り切れた商品
 // function update_status_to_done($id)
 // {
 //     // データベースに接続
@@ -128,7 +128,6 @@ function update_status($id, $status)
     $stmt->bindParam(':status', $status, PDO::PARAM_STR);
     $stmt->execute();
 }
-
 
 
 function find_task_by_status($status)
@@ -182,7 +181,7 @@ function find_by_id($id)
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
-// タスク更新時のバリデーション
+// 商品更新時のバリデーション
 function update_validate($title, $task)
 {
     // 初期化
@@ -199,7 +198,7 @@ function update_validate($title, $task)
     return $errors;
 }
 
-// タスク更新
+// 商品更新
 function update_task($id, $title, $price)
 {
     // データベースに接続
@@ -228,7 +227,7 @@ function update_task($id, $title, $price)
     $stmt->execute();
 }
 
-// タスク削除
+// 商品削除
 function delete_task($id)
 {
     // データベースに接続

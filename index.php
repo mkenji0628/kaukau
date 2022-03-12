@@ -2,7 +2,7 @@
 require_once __DIR__ . '/functions.php';
 require_once __DIR__ . '/config.php';
 
-/* タスク登録
+/* 商品登録
 --------------------------------------------*/
 // 初期化
 $title = '';
@@ -14,20 +14,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = filter_input(INPUT_POST, 'title');
     $price = filter_input(INPUT_POST, 'price');
 
-    // タスク登録処理の実行
+    // 商品登録処理の実行
     insert_task($title, $price);
     $errors = insert_validate($title, $price);
 
     // エラーチェック
-    if (empty($errors)) {
-        // タスク登録処理の実行
-        insert_task($title);
+    if (!empty($errors)) {
+        // 商品登録処理の実行
+        insert_task($title, $price);
     }
 }
 
 $notyet_tasks = find_task_by_status(TASK_STATUS_NOTYET);
 
-// 完了タスクの取得
+// 売り切れ商品の取得
 $done_tasks = find_task_by_status(TASK_STATUS_DONE);
 ?>
 
