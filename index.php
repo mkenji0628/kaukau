@@ -72,7 +72,7 @@ $done_tasks = find_task_by_status(TASK_STATUS_DONE);
         </div>
         <hr>
         <div class="done-task">
-            <h2>売り切れた商品</h2>
+            <h2 class="ribbon1">売り切れた商品</h2>
             <ul>
                 <?php foreach ($done_tasks as $task) : ?>
                     <li>
