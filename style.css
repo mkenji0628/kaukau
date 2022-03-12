@@ -11,7 +11,6 @@ body {
     color: rgb(66, 69, 71);
 }
 
-
 h1,
 h2 {
     text-align: center;
@@ -43,8 +42,6 @@ li {
     margin-bottom: 20px;
     padding: 10px 20px;
 }
-
-
 
 /* フォーム */
 input[type="text"] {
@@ -79,8 +76,6 @@ input[type="text"] {
     display: block;
     background-color: #f5b781;
 }
-
-
 
 .done-btn,
 .edit-btn,
