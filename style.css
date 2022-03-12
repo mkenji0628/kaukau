@@ -32,7 +32,7 @@ li {
     line-height: 1.5;
     background: #f0d919;
     vertical-align: middle;
-    color: #505050;
+    color: #0b23f0;
     border-radius: 15px 0px 0px 15px;/*左側の角丸く*/
 }
 ol li {
@@ -55,7 +55,7 @@ li:before{
     content:'';
     width:1em;
     height: 1em;
-    background: #fff;
+    background: #0b23f0;
     border-radius: 50%;
     margin-right: 8px;
 }
@@ -73,8 +73,8 @@ li:before{
 }
 
 .errors {
-    color: #ed2222;
-    background-color: #f0cdcd;
+    color: #f0d919;
+    background-color: #f0d919;
     list-style: none;
     border-radius: 5px;
     margin-bottom: 20px;
@@ -93,6 +93,7 @@ input[type="text"] {
 /* ボタン */
 .btn {
     color: #0b23f0;
+    background-color: white;
     border-radius: 5px;
     text-align: center;
 }
@@ -113,7 +114,7 @@ input[type="text"] {
 }
 .return-btn {
     display: block;
-    background-color: #f5b781;
+    background-color: #f0d919;
 }
 
 .done-btn,
@@ -125,7 +126,7 @@ input[type="text"] {
     padding: 5px;
 }
 .done-btn {
-    background-color: #29cd70;
+    background-color: white;
 }
 .edit-btn {
     background-color: rgb(47, 147, 240);
@@ -186,7 +187,7 @@ input[type="text"] {
     top: 0;
     left: 0;
     border-width: 25px 0px 25px 15px;
-    border-color: transparent transparent transparent #fff;
+    border-color: transparent transparent transparent #0b23f0;
     border-style: solid;
 }
 
@@ -194,7 +195,7 @@ input[type="text"] {
     top: 0;
     right: 0;
     border-width: 25px 15px 25px 0px;
-    border-color: transparent #fff transparent transparent;
+    border-color: transparent #0b23f0 transparent transparent;
     border-style: solid;
 }
 
