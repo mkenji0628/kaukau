@@ -52,12 +52,13 @@ $done_tasks = find_task_by_status(TASK_STATUS_DONE);
             </form>
         </div>
         <div class="notyet-task">
-            <h2>販売商品一覧</h2>
+            <h2 class="in-ribbon">販売商品一覧</h2>
+
             <ul>
                 <?php foreach ($notyet_tasks as $task) : ?>
                     <li>
                         <!-- <div><?php var_dump($task) ?></div> -->
-                        <a href="done.php?id=<?= h($task['id']) ?>" class="btn done-btn">完了</a>
+                        <a href="done.php?id=<?= h($task['id']) ?>" class="btn done-btn">売切</a>
                         <!-- edit.php へのパスを追記 -->
                         <a href="edit.php?id=<?= h($task['id']) ?>" class="btn edit-btn">編集</a>
                         <!-- delete.php へのパスを追記 -->
@@ -71,11 +72,11 @@ $done_tasks = find_task_by_status(TASK_STATUS_DONE);
         </div>
         <hr>
         <div class="done-task">
-            <h2>売り切れた商品</h2>
+            <h2 class="out-ribbon">売り切れた商品</h2>
             <ul>
                 <?php foreach ($done_tasks as $task) : ?>
                     <li>
-                        <a href="cancel.php?id=<?= h($task['id']) ?>" class="btn cancel-btn">未完了</a>
+                        <a href="cancel.php?id=<?= h($task['id']) ?>" class="btn cancel-btn">再販</a>
                         <?= h($task['title']) ?>
                         <?= h($task['price'] . '円') ?>
                     </li>

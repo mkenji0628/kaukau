@@ -3,12 +3,19 @@
 /* 共通部分
 ---------------------*/
 html {
-    font-size: 100%;
+    font-size: 110%;
 }
 body {
+    font-size: 100%;
+    font-weight: bold;
     font-family: 'Noto Sans JP', sans-serif;
     font-family: 'Zen Maru Gothic', sans-serif;
-    color: rgb(66, 69, 71);
+    color: #f0d919;
+}
+
+form {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Zen Maru Gothic', sans-serif;
 }
 
 
@@ -26,45 +33,83 @@ ul {
 li {
     margin-bottom: 5px;
     padding: 5px;
+    position: relative;
+    list-style-type: none!important;/*ポチ消す*/
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    margin-bottom: 5px;
+    line-height: 1.5;
+    background: #f0d919;
+    vertical-align: middle;
+    color: #0b23f0;
+    border-radius: 15px 0px 0px 15px;/*左側の角丸く*/
 }
+ol li {
+    color: black;
+    border-left: solid 8px orange;/*左側の線*/
+    background: red;/*背景色*/
+    margin-bottom: 5px;/*下のバーとの余白*/
+    line-height: 1.5;
+    border-radius: 0 15px 15px 0;/*右側の角だけ丸く*/
+    padding: 0.5em;
+    list-style-type: none!important;
+}
+ol {
+    padding: 0;
+}
+li:before{ 
+    display:inline-block; 
+    vertical-align: middle;
+    /*以下白丸つくる*/
+    content:'';
+    width:1em;
+    height: 1em;
+    background: #0b23f0;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+
 .wrapper {
-    width: 600px;
+    width: 1170px;
+    max-width: 100%;
     margin: 30px auto;
     padding: 40px 50px;
-    border: 1px solid #dfdfdc;
+    border: 5px solid #161614;
     border-radius: 5px;
+    background-color: #0b23f0;
+
 }
 
 .errors {
-    color: #ed2222;
-    background-color: #f0cdcd;
+    color: #f0d919;
+    background-color: #f0d919;
     list-style: none;
     border-radius: 5px;
     margin-bottom: 20px;
     padding: 10px 20px;
 }
 
-
-
 /* フォーム */
 input[type="text"] {
-    border: 1px solid #b8b4b4;
-    border-radius: 3px;
-    width: 100%;
+    border: 5px solid #161614;
+    background: #f0d919;
+    border-radius: 50px;
+    width: 49%;
     padding: 10px;
 }
 
 /* ボタン */
 .btn {
-    color: #fff;
-    border-radius: 5px;
+    border-radius: 100px;
     text-align: center;
 }
 .btn:hover {
-    background-color:#93d8d0;
+    background-color: white;
 }
 .submit-btn,
 .return-btn {
+    text-align:center;
+    color: #0b23f0;
     width: 100%;
     margin-top: 20px;
     padding: 5px 0;
@@ -73,34 +118,57 @@ input[type="text"] {
 }
 
 .submit-btn {
-    background-color: #4394eb;
+    background-color: #f0d919;
 }
 .return-btn {
     display: block;
-    background-color: #f5b781;
+    background-color: #f0d919;
 }
-
-
 
 .done-btn,
 .edit-btn,
 .delete-btn,
 .cancel-btn {
+    color: #f0d919;
     font-size: 0.9rem;
     margin-right: 3px;
     padding: 5px;
 }
 .done-btn {
-    background-color: #29cd70;
+    background-color: #0b23f0;
+    display: inline-block;
+    padding: 0.3em 0.3em;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0px 0px 0px 5px #0b23f0;
+    border: dashed 2px #f0d919;
 }
 .edit-btn {
-    background-color: rgb(47, 147, 240);
+    background-color: #0b23f0;
+    display: inline-block;
+    padding: 0.3em 0.3em;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0px 0px 0px 5px #0b23f0;
+    border: dashed 2px #f0d919;
 }
 .delete-btn {
-    background-color: #f96262;
+    background-color: #0b23f0;
+    display: inline-block;
+    padding: 0.3em 0.3em;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0px 0px 0px 5px #0b23f0;
+    border: dashed 2px #f0d919;
 }
 .cancel-btn {
-    background-color: #88109b;
+    background-color: #0b23f0;
+    display: inline-block;
+    padding: 0.3em 0.3em;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0px 0px 0px 5px #0b23f0;
+    border: dashed 2px #f0d919;
 }
 
 /* 商品一覧画面 
@@ -115,15 +183,61 @@ input[type="text"] {
 .notyet-task {
     margin-bottom: 60px;
 }
-.notyet-task h2 {
+/* .notyet-task h2 {
     background: linear-gradient(transparent 70%, #fee9a4 70%);
+} */
+.in-ribbon, .out-ribbon{
+    /* display: inline-block; t */
+    position: relative;
+    height: 50px;/*リボンの高さ*/
+    line-height: 50px;/*リボンの高さ*/
+    text-align: center;
+    padding: 0 30px;/*横の大きさ*/
+    font-size: 30px;/*文字の大きさ*/
+    /* background: #f57a78;塗りつぶし色 */
+    color: #0b23f0;/*文字色*/
+    box-sizing: border-box;
 }
+
+.in-ribbon{
+    background: #f0d919;/*塗りつぶし色*/
+}
+
+.out-ribbon{
+    background: #f0d919;/*塗りつぶし色*/
+}
+
+
+.in-ribbon:before, .in-ribbon:after, .out-ribbon:before, .out-ribbon:after{
+    position: absolute;
+    content: '';
+    width: 0px;
+    height: 0px;
+    z-index: 1;
+}
+
+.in-ribbon:before, .out-ribbon:before {
+    top: 0;
+    left: 0;
+    border-width: 25px 0px 25px 15px;
+    border-color: transparent transparent transparent #0b23f0;
+    border-style: solid;
+}
+
+.in-ribbon:after, .out-ribbon:after {
+    top: 0;
+    right: 0;
+    border-width: 25px 15px 25px 0px;
+    border-color: transparent #0b23f0 transparent transparent;
+    border-style: solid;
+}
+
 
 /* 売り切れ商品一覧 */
 .done-task {
     margin-top: 30px;
     margin-bottom: 60px;
 }
-.done-task h2 {
+/* .done-task h2 {
     background: linear-gradient(transparent 70%, #edbbfa 70%);
-}
+} */

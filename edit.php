@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <body>
     <div class="wrapper">
-        <h2>商品情報変更</h2>
+        <h1>商品情報変更</h1>
         <!-- エラーが発生した場合、エラーメッセージを出力 -->
         <?php if ($errors) echo (create_err_msg($errors)) ?>
         <form action="" method="post">
@@ -53,9 +53,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="text" name="price" value="<?= h($task['price']) ?>">
             <input type="submit" value="商品名変更" class="btn submit-btn">
         </form>
-    </div>
-
-    <div class="wrapper">
         <a href="index.php" class="btn return-btn">戻る</a>
     </div>
 </body>
