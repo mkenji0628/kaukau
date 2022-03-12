@@ -8,7 +8,7 @@ html {
 body {
     font-family: 'Noto Sans JP', sans-serif;
     font-family: 'Zen Maru Gothic', sans-serif;
-    color: rgb(66, 69, 71);
+    color: #f0d919;
 }
 
 h1,
@@ -30,7 +30,7 @@ li {
     padding: 0.5em 0.5em 0.5em 0.5em;
     margin-bottom: 5px;
     line-height: 1.5;
-    background: #dbebf8;
+    background: #f0d919;
     vertical-align: middle;
     color: #505050;
     border-radius: 15px 0px 0px 15px;/*左側の角丸く*/
@@ -62,11 +62,14 @@ li:before{
 
 
 .wrapper {
-    width: 800px;
+    width: 1170px;
+    max-width: 100%;
     margin: 30px auto;
     padding: 40px 50px;
-    border: 1px solid #dfdfdc;
+    border: 5px solid #161614;
     border-radius: 5px;
+    background-color: #0b23f0;
+
 }
 
 .errors {
@@ -80,15 +83,16 @@ li:before{
 
 /* フォーム */
 input[type="text"] {
-    border: 1px solid #b8b4b4;
-    border-radius: 3px;
-    width: 100%;
+    border: 5px solid #161614;
+    background: #f0d919;
+    border-radius: 50px;
+    width: 49%;
     padding: 10px;
 }
 
 /* ボタン */
 .btn {
-    color: #fff;
+    color: #0b23f0;
     border-radius: 5px;
     text-align: center;
 }
@@ -105,7 +109,7 @@ input[type="text"] {
 }
 
 .submit-btn {
-    background-color: #4394eb;
+    background-color: #f0d919;
 }
 .return-btn {
     display: block;
@@ -148,21 +152,29 @@ input[type="text"] {
 /* .notyet-task h2 {
     background: linear-gradient(transparent 70%, #fee9a4 70%);
 } */
-.in-ribbon{
-    text-align: center;
-    display: inline-block; 
+.in-ribbon, .out-ribbon{
+    /* display: inline-block; t */
     position: relative;
     height: 50px;/*リボンの高さ*/
     line-height: 50px;/*リボンの高さ*/
     text-align: center;
     padding: 0 30px;/*横の大きさ*/
     font-size: 30px;/*文字の大きさ*/
-    background: #f57a78;/*塗りつぶし色*/
-    color: #FFF;/*文字色*/
+    /* background: #f57a78;塗りつぶし色 */
+    color: #0b23f0;/*文字色*/
     box-sizing: border-box;
 }
 
-.in-ribbon:before, .in-ribbon:after {
+.in-ribbon{
+    background: #f0d919;/*塗りつぶし色*/
+}
+
+.out-ribbon{
+    background: #f0d919;/*塗りつぶし色*/
+}
+
+
+.in-ribbon:before, .in-ribbon:after, .out-ribbon:before, .out-ribbon:after{
     position: absolute;
     content: '';
     width: 0px;
@@ -170,7 +182,7 @@ input[type="text"] {
     z-index: 1;
 }
 
-.in-ribbon:before {
+.in-ribbon:before, .out-ribbon:before {
     top: 0;
     left: 0;
     border-width: 25px 0px 25px 15px;
@@ -178,7 +190,7 @@ input[type="text"] {
     border-style: solid;
 }
 
-.in-ribbon:after {
+.in-ribbon:after, .out-ribbon:after {
     top: 0;
     right: 0;
     border-width: 25px 15px 25px 0px;
