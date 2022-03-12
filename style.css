@@ -103,15 +103,15 @@ input[type="text"] {
     background-color: #88109b;
 }
 
-/* タスク一覧画面 
+/* 商品一覧画面 
 -----------------------*/
 
-/* タスク登録フォーム */
+/* 商品登録フォーム */
 .new-task {
     margin-bottom: 60px;
 }
 
-/* 未完了タスク一覧 */
+/* 販売商品一覧 */
 .notyet-task {
     margin-bottom: 60px;
 }
@@ -119,7 +119,7 @@ input[type="text"] {
     background: linear-gradient(transparent 70%, #fee9a4 70%);
 }
 
-/* 完了タスク一覧 */
+/* 売り切れ商品一覧 */
 .done-task {
     margin-top: 30px;
     margin-bottom: 60px;
