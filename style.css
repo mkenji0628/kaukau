@@ -38,7 +38,7 @@ li {
 ol li {
     color: black;
     border-left: solid 8px orange;/*左側の線*/
-    background: whitesmoke;/*背景色*/
+    background: red;/*背景色*/
     margin-bottom: 5px;/*下のバーとの余白*/
     line-height: 1.5;
     border-radius: 0 15px 15px 0;/*右側の角だけ丸く*/
@@ -92,8 +92,8 @@ input[type="text"] {
 
 /* ボタン */
 .btn {
-    color: #0b23f0;
-    background-color: white;
+    /* color: #0b23f0; */
+    background-color: red;
     border-radius: 5px;
     text-align: center;
 }
@@ -102,6 +102,7 @@ input[type="text"] {
 }
 .submit-btn,
 .return-btn {
+    color: #0b23f0;
     width: 100%;
     margin-top: 20px;
     padding: 5px 0;
@@ -121,21 +122,22 @@ input[type="text"] {
 .edit-btn,
 .delete-btn,
 .cancel-btn {
+    color: #f0d919;
     font-size: 0.9rem;
     margin-right: 3px;
     padding: 5px;
 }
 .done-btn {
-    background-color: white;
+    background-color: #0b23f0;
 }
 .edit-btn {
-    background-color: rgb(47, 147, 240);
+    background-color: #0b23f0;
 }
 .delete-btn {
-    background-color: #f96262;
+    background-color: #0b23f0;
 }
 .cancel-btn {
-    background-color: #88109b;
+    background-color: #0b23f0;
 }
 
 /* 商品一覧画面 
