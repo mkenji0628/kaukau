@@ -52,7 +52,8 @@ $done_tasks = find_task_by_status(TASK_STATUS_DONE);
             </form>
         </div>
         <div class="notyet-task">
-            <h2>販売商品一覧</h2>
+            <h2 class="ribbon1">販売商品一覧</h2>
+
             <ul>
                 <?php foreach ($notyet_tasks as $task) : ?>
                     <li>

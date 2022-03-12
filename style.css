@@ -49,15 +49,15 @@ ol {
     padding: 0;
 }
 li:before{ 
-  display:inline-block; 
-  vertical-align: middle;
-  /*以下白丸つくる*/
-  content:'';
-  width:1em;
-  height: 1em;
-  background: #fff;
-  border-radius: 50%;
-  margin-right: 8px;
+    display:inline-block; 
+    vertical-align: middle;
+    /*以下白丸つくる*/
+    content:'';
+    width:1em;
+    height: 1em;
+    background: #fff;
+    border-radius: 50%;
+    margin-right: 8px;
 }
 
 
@@ -145,9 +145,47 @@ input[type="text"] {
 .notyet-task {
     margin-bottom: 60px;
 }
-.notyet-task h2 {
+/* .notyet-task h2 {
     background: linear-gradient(transparent 70%, #fee9a4 70%);
+} */
+.ribbon1 {
+    text-align: center;
+    display: inline-block; 
+    position: relative;
+    height: 50px;/*リボンの高さ*/
+    line-height: 50px;/*リボンの高さ*/
+    text-align: center;
+    padding: 0 30px;/*横の大きさ*/
+    font-size: 30px;/*文字の大きさ*/
+    background: #f57a78;/*塗りつぶし色*/
+    color: #FFF;/*文字色*/
+    box-sizing: border-box;
 }
+
+.ribbon1:before, .ribbon1:after {
+    position: absolute;
+    content: '';
+    width: 0px;
+    height: 0px;
+    z-index: 1;
+}
+
+.ribbon1:before {
+    top: 0;
+    left: 0;
+    border-width: 25px 0px 25px 15px;
+    border-color: transparent transparent transparent #fff;
+    border-style: solid;
+}
+
+.ribbon1:after {
+    top: 0;
+    right: 0;
+    border-width: 25px 15px 25px 0px;
+    border-color: transparent #fff transparent transparent;
+    border-style: solid;
+}
+
 
 /* 売り切れ商品一覧 */
 .done-task {
